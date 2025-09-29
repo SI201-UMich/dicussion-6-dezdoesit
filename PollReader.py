@@ -1,3 +1,6 @@
+# Dez Blair
+# SI 201 - 001 Discussion 6 
+
 import os
 import unittest
 
