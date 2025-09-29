@@ -1,5 +1,7 @@
 # Dez Blair
 # SI 201 - 001 Discussion 6 
+# 9/29/25
+# Used some AI to help understand current functions and undesstanding slice in CSV files
 
 import os
 import unittest
