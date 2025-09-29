@@ -1,7 +1,7 @@
 # Dez Blair
 # SI 201 - 001 Discussion 6 
 # 9/29/25
-# Used some AI to help understand current functions and undesstanding slice in CSV files
+# Used some AI to help understand current functions and understanding slice in CSV files
 
 import os
 import unittest
@@ -131,6 +131,8 @@ class PollReader():
             tuple: A tuple containing the net change for Harris and Trump, in that order.
                    Positive values indicate an increase, negative values indicate a decrease.
         """
+
+        """
         n = 30
         total = len(self.data_dict['Harris result'])
         if total == 0:
@@ -147,6 +149,14 @@ class PollReader():
         earliest_trump_avg = sum(earliest_trump) / len(earliest_trump)
 
         return (latest_harris_avg - earliest_harris_avg, latest_trump_avg - earliest_trump_avg)
+        """
+        early_harris = sum(self.data_dict['Harris result'][:30]) / 30
+        early_trump = sum(self.data_dict['Trump result'][:30]) / 30
+
+        late_harris = sum(self.data_dict['Harris result'][-30:]) / 30
+        late_trump = sum(self.data_dict['Trump result'][-30:]) / 30
+
+        return (late_harris - early_harris, late_trump - early_trump)
 
 
 class TestPollReader(unittest.TestCase):
